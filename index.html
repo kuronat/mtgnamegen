@@ -1,7 +1,7 @@
+<title>MTG Name Generator</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 <style type="text/css">
-
 .fb {
   height: 400px;
   width: 100%;
@@ -16,21 +16,20 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 <script type="text/javascript">
 $.get("./words.json", (d) => {
-  words = d
-  $(".loading").remove()
-})
+  words = d;
+  $(".loading").remove();
+});
 function getstring(){
-  return _.sampleSize(words,2).join("-") + '-' + (Math.floor(Math.random()*900) + 100)
+  return _.sampleSize(words,2).join("-") + "-" + (Math.floor(Math.random()*900) + 100);
 }
 function render(){
-  $(".disp").text(getstring())
+  $(".disp").text(getstring());
 }
 </script>
 
